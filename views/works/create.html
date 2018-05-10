@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-md-12">
+		<?php if ($message != '') { ?>
+		<div class="alert alert-success" role="alert">
+		  <?php echo $message ?>
+		</div>
+		<?php } ?>
+		<form method="POST" action="index.php?controller=works&action=postCreate" class="needs-validation" novalidate>
+		  	<div class="form-row">
+			    <div class="form-group col-md-6">
+			      	<label for="inputEmail4">Work Name</label>
+			      	<input type="text" class="form-control" id="work_name" name="work_name" placeholder="Work Name" required>
+			    </div>
+		  	</div>
+		 	<div class="form-row">
+			    <div class="form-group col-md-6">
+			      	<label for="inputEmail4">Start Date</label>
+			      	<input type="date" class="form-control" id="start_date" name="start_date" placeholder="Start Date" required>
+			    </div>
+		  	</div>
+		  	<div class="form-row">
+			    <div class="form-group col-md-6">
+			      	<label for="inputEmail4">End Date</label>
+			      	<input type="date" class="form-control" id="end_date" name="end_date" placeholder="End Date" required>
+			    </div>
+		  	</div>
+		  	<div class="form-row">
+			    <div class="form-group col-md-6">
+			      	<label for="inputState">Status</label>
+			      	<select id="inputState" class="form-control" name="status">
+			        	<option selected>Choose...</option>
+			        	<option value="1">Planning</option>
+			        	<option value="2">Doing</option>
+			        	<option value="3">Complete</option>
+			      	</select>
+			    </div>
+		  	</div>
+		  	<button type="submit" class="btn btn-primary">Create</button>
+		</form>
+	</div>
+</div>

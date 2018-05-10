@@ -1,0 +1,37 @@
+<div class="row">
+	<table class="table table-bordered table-dark">
+	 	<thead>
+		    <tr>
+		      <th scope="col" class="text-center">#</th>
+		      <th scope="col" class="text-center">Work Name</th>
+		      <th scope="col" class="text-center">Start Date</th>
+		      <th scope="col" class="text-center">End Date</th>
+		      <th scope="col" class="text-center">Status</th>
+		      <th scope="col" class="text-center">Action</th>
+		    </tr>
+	  	</thead>
+	  	<tbody>
+	  		<?php foreach ($works as $work) { ?>
+		    <tr>
+		      <th scope="row"><?php echo $work->id ?></th>
+		      <td><?php echo $work->work_name ?></td>
+		      <td><?php echo $work->start_date ?></td>
+		      <td><?php echo $work->start_date ?></td>
+		      <td>
+				<?php if ($work->status == 1) {?>
+		      	<span class="badge badge-pill badge-primary">Planning</span>
+		      	<?php } if($work->status == 2) {?>
+				<span class="badge badge-pill badge-warning">Doing</span>
+		      	<?php } if($work->status == 3) {?>
+		      	<span class="badge badge-pill badge-success">Complete</span>
+		      	<?php } ?>
+		      	</td>
+		      <td class="text-center">
+		      	<a href="index.php?controller=works&action=edit&id=<?php echo $work->id ?>"><i class="fas fa-edit fa-2x"></i></a>
+		      	<a href="index.php?controller=works&action=delete&id=<?php echo $work->id ?>"><i class="fas fa-trash-alt fa-2x" style="color: #dc2c2c;"></i></a>
+		      </td>
+		    </tr>
+		    <?php } ?>
+	  	</tbody>
+	</table>
+</div>
