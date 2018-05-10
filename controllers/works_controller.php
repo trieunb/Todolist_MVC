@@ -23,6 +23,7 @@ class WorksController extends BaseController
 
   public function edit()
   {
+    //get data by id
     $work = Work::find($_GET['id']);
     $data = array('work' => $work);
     $this->render('edit', $data);
@@ -36,6 +37,7 @@ class WorksController extends BaseController
       'end_date'     => $_POST['end_date'],
       'status'       => $_POST['status']
     ];
+    //insert data
     Work::create($data);
     $this->render('create', ['message' => 'success']);
   }
@@ -44,7 +46,7 @@ class WorksController extends BaseController
   {
     //delete
     Work::delete($_GET['id']);
-
+    //get all data
     $works  = Work::all();
     $data   = array('works' => $works);
     $this->render('index', $data);
