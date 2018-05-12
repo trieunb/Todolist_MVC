@@ -4,6 +4,7 @@ require_once('models/work.php');
 
 class WorksController extends BaseController
 {
+  
   function __construct()
   {
     $this->folder = 'works';
@@ -52,10 +53,8 @@ class WorksController extends BaseController
       'end_date'     => $_POST['end_date'],
       'status'       => $_POST['status']
     ];
-    // var_dump($data);
     //update data
     Work::update($data);
-    // $this->render('edit', ['message' => 'success']);
     header('Location: index.php?controller=works&action=edit&id='.$_GET['id']);
   }
 
@@ -67,7 +66,6 @@ class WorksController extends BaseController
     $works  = Work::all();
     $data   = array('works' => $works);
     header('Location: index.php?controller=works');
-    // $this->render('index', $data);
   }
 
 }

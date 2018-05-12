@@ -4,6 +4,7 @@ require_once('models/work.php');
 
 class CalendarController extends BaseController
 {
+  
   function __construct()
   {
     $this->folder = 'calender';
@@ -13,6 +14,7 @@ class CalendarController extends BaseController
   {
     $this->render('index');
   }
+
   public function getDataCalendar()
   {
     $works  	= 	Work::all();
