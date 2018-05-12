@@ -1,0 +1,14 @@
+{
+    "name": "trieunb/todolist_mvc",
+    "description": "ToDoList MVC",
+    "authors": [
+        {
+            "name": "trieunb",
+            "email": "trieunb08@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
