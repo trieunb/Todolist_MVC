@@ -42,6 +42,23 @@ class WorksController extends BaseController
     $this->render('create', ['message' => 'success']);
   }
 
+  public function postUpdate()
+  {
+
+    $data = [
+      'id'           => $_GET['id'],
+      'work_name'    => $_POST['work_name'],
+      'start_date'   => $_POST['start_date'],
+      'end_date'     => $_POST['end_date'],
+      'status'       => $_POST['status']
+    ];
+    // var_dump($data);
+    //update data
+    Work::update($data);
+    // $this->render('edit', ['message' => 'success']);
+    header('Location: index.php?controller=works&action=edit&id='.$_GET['id']);
+  }
+
   public function delete()
   {
     //delete
@@ -49,7 +66,8 @@ class WorksController extends BaseController
     //get all data
     $works  = Work::all();
     $data   = array('works' => $works);
-    $this->render('index', $data);
+    header('Location: index.php?controller=works');
+    // $this->render('index', $data);
   }
 
 }

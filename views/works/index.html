@@ -28,7 +28,7 @@
 		      	</td>
 		      <td class="text-center">
 		      	<a href="index.php?controller=works&action=edit&id=<?php echo $work->id ?>"><i class="fas fa-edit fa-2x"></i></a>
-		      	<a href="index.php?controller=works&action=delete&id=<?php echo $work->id ?>"><i class="fas fa-trash-alt fa-2x" style="color: #dc2c2c;"></i></a>
+		      	<a href="index.php?controller=works&action=delete&id=<?php echo $work->id ?>" onclick="if (confirm('Delete selected item?')){return true;}else{event.stopPropagation(); event.preventDefault();};"><i class="fas fa-trash-alt fa-2x" style="color: #dc2c2c;"></i></a>
 		      </td>
 		    </tr>
 		    <?php } ?>

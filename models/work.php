@@ -53,6 +53,16 @@ class Work
     return null;
   }
 
+  static function update($data)
+  {
+    $db   = DB::getInstance();
+    $sql  = "UPDATE tb_works SET work_name = :work_name, start_date = :start_date, end_date = :end_date, status = :status WHERE id=:id";
+    $req  = $db->prepare($sql);
+    $req->execute($data);
+    
+    return null;
+  }
+
   static function delete($id)
   {
     $db   = DB::getInstance();
