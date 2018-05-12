@@ -18,7 +18,7 @@ class CalendarController extends BaseController
   public function getDataCalendar()
   {
     $works  	= 	Work::all();
-    $data   	= 	array('works' => $works);
+    // $data   	= 	array('works' => $works);
     $calender =	  [];
     $status   =   '';
    	foreach ($works as $work) {

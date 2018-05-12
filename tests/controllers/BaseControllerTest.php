@@ -10,9 +10,13 @@ class BaseControllerTest extends PHPUnit_Framework_TestCase {
         $this->base_controller = new BaseController();
     }
     
-    public function testTrueValue()
+    public function testRender1()
     {
-        $this->assertTrue(TRUE);
+    	header('Location: http://www.example.com/');
+    	$this->assertInstanceOf(
+            $this->base_controller,
+            $this->base_controller->render('folder', 'file', [])
+        );
     }
 }
 ?>
